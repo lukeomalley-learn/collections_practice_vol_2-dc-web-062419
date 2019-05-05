@@ -60,15 +60,29 @@ end
 
 def merge_data(keys, data)
   merged = []
+<<<<<<< HEAD
   data.each do |hash|
     hash.each do |name, information|
       keys.each do |keys_hash|
         if keys_hash[:first_name] == name
            merged.push(keys_hash.merge(information))
+=======
+  c = {}
+  keys.each do |hash|
+    merged.push(hash)
+  end
+  
+  data.each do |hash|
+    hash.each do |name, information|
+      merged.each do |keys_hash|
+        if keys_hash[:first_name] == name
+           c = keys_hash.merge(information)
+>>>>>>> 67bb91edbf0fb7c6fc84ccbcd5a20de86bc4df20
         end
       end
     end
   end
+<<<<<<< HEAD
   return merged;
 end
 
@@ -99,3 +113,52 @@ def organize_schools(school_hash)
   end
   return organized_hash
 end
+=======
+  return c
+end
+
+
+
+
+keys =  [
+    {
+        :first_name => "blake",
+             :motto => "Have a koala-ty day!"
+    },
+    {
+        :first_name => "ashley",
+             :motto => "I dub thee, 'Lady Brett Ashley'."
+    }
+]
+
+data = [
+   {
+        "blake" => {
+            :awesomeness => 10,
+                 :height => "74",
+              :last_name => "johnson"
+        },
+        "ashley" => {
+            :awesomeness => 9,
+                 :height => 60,
+              :last_name => "dubs"
+        }
+    }
+]
+
+puts merge_data(keys, data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 67bb91edbf0fb7c6fc84ccbcd5a20de86bc4df20
